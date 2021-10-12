@@ -1,5 +1,6 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
+import ChildrenTest from './ChildrenTest';
 
 import './App.css';
 
@@ -75,12 +76,37 @@ class WhoAmI extends Component {
 const Wrapper = styled.div`
 	width: 600px;
 	margin: 80px auto 0 auto;
-
 `;
+
+const DynamicGreating = (props) => {
+	return (
+		<div className={'mb-3 p-3 border border-' + props.color}>
+			{
+				React.Children.map(props.children, child => {
+					return React.cloneElement(child, {className: 'shadow p-3 m-3 border rounded'})
+				})
+			}
+		</div>
+	)
+}
 
 function App() {
 	return (
 		<Wrapper>
+			<ChildrenTest
+				left = {
+					<DynamicGreating color={'primary'}>
+						<h2>This weel was hard</h2>
+						<h2>Hello world</h2>
+					</DynamicGreating>
+				}
+				right = {
+					<DynamicGreating color={'primary'}>
+						<h2>ALL RIGHT!!!</h2>
+					</DynamicGreating>
+				}
+			/>
+
 			<WhoAmI name="Diana" surname="Altdinova" link="vk.com"/>
 			<WhoAmI name="Ramil" surname="Galikeev" link="facebook.com"/>
 		</Wrapper>
