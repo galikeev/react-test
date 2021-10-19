@@ -151,7 +151,7 @@ function useInputWithValidate(initialValue) {
 	return {value: value, onChange: onChange, validateInput: validateInput}
 }
 
-const Form = () => {
+const FormFirst = () => {
 
 	const input = useInputWithValidate('');
 	const textArea = useInputWithValidate('');
@@ -214,10 +214,12 @@ const Msg = () => {
 	)
 }
 
+/*  */
+
 function App() {
 	return (
 		<Wrapper>
-			<Form/>
+			<FormFirst/>
 
 			<Counter render={counter => (
 				<Message counter={counter}/>
