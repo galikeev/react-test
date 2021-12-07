@@ -31,7 +31,7 @@ const BootstrapTest = () => {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src="https://im0-tub-ru.yandex.net/i?id=090de3ccb769339738e65fa387057d74-l&ref=rim&n=13&w=1080&h=810"
+                                src="https://mobimg.b-cdn.net/v3/fetch/ed/ed116ecd62f35ed3a4129860abb80128.jpeg"
                                 alt="First slide"/>
                             <Carousel.Caption>
                                 <h3>First slide label</h3>
@@ -52,7 +52,7 @@ const BootstrapTest = () => {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src="https://im0-tub-ru.yandex.net/i?id=090de3ccb769339738e65fa387057d74-l&ref=rim&n=13&w=1080&h=810"
+                                src="https://mobimg.b-cdn.net/v3/fetch/ed/ed116ecd62f35ed3a4129860abb80128.jpeg"
                                 alt="Third slide"/>
 
                             <Carousel.Caption>

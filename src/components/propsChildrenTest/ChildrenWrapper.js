@@ -1,6 +1,6 @@
 import {Container, Row, Col} from 'react-bootstrap';
 
-const ChildrenTest = (props) => {
+const ChildrenWrapper = (props) => {
     return (
         <Container>
             <Row>
@@ -16,4 +16,4 @@ const ChildrenTest = (props) => {
     )
 }
 
-export default ChildrenTest;
+export default ChildrenWrapper;
