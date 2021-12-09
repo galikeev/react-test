@@ -2,33 +2,6 @@ import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import {Container} from 'react-bootstrap';
 
-class PortalTest extends Component {
-    state = {
-        isOpen: false
-    }
-
-    onHandleClick = () => {
-        this.setState(() => ({
-            isOpen: !this.state.isOpen
-        }))
-    }
-
-	render() {
-        return (
-            <Container>
-                    <button 
-                        className={'btn btn-primary'} 
-                        onClick={this.onHandleClick}>
-                            Click open portal
-                            <Portal>
-                                {this.state.isOpen && <Msg/>}
-                            </Portal>
-                    </button>
-            </Container>
-        )
-    }
-}
-
 class Portal extends Component {
     constructor(props) {
         super(props);
@@ -63,6 +36,33 @@ const Msg = () => {
 			Hello Portal
 		</div>
 	)
+}
+
+class PortalTest extends Component {
+    state = {
+        isOpen: false
+    }
+
+    onHandleClick = () => {
+        this.setState(() => ({
+            isOpen: !this.state.isOpen
+        }))
+    }
+
+	render() {
+        return (
+            <Container>
+                    <button 
+                        className={'btn btn-primary'} 
+                        onClick={this.onHandleClick}>
+                            Click open portal
+                            <Portal>
+                                {this.state.isOpen && <Msg/>}
+                            </Portal>
+                    </button>
+            </Container>
+        )
+    }
 }
 
 export default PortalTest;
