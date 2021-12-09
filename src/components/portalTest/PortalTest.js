@@ -29,12 +29,24 @@ class PortalTest extends Component {
     }
 }
 
-const Portal = (props) => {
-	const node = document.createElement('div');
-	document.body.appendChild(node);
-    node.style.position = 'relative';
+class Portal extends Component {
+    constructor(props) {
+        super(props);
+        this.node = document.createElement('div');
+        this.node.style.position = 'relative';
+    }
 
-	return ReactDOM.createPortal(props.children, node);
+    componentDidMount() {
+        document.body.appendChild(this.node);
+    }
+
+	componentWillUnmount() {
+        document.body.removeChild(this.node);
+    }
+
+    render() {
+        return ReactDOM.createPortal(this.props.children, this.node);
+    }
 }
 
 const Msg = () => {
